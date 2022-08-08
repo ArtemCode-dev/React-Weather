@@ -8,7 +8,7 @@ const ThisDay = () => {
             <div className={s.top__block}>
                 <div className={s.top__block_wrapper}>
                     <div className={s.this__temp}>
-                        20°
+                        18°
                     </div>
                     <div className={s.this__day_name}>
                         Сегодня
