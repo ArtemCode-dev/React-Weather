@@ -7,7 +7,7 @@ import Popup from "./pages/shared/Popup/Popup";
 function App() {
   return (
     <>
-      <Popup />
+      {/* <Popup /> */}
       <div className="container">
         <Header />
         <Routes>

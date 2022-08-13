@@ -10,8 +10,8 @@
     justify-content: space-between;
     width: 750px;
     height: 300px;
-    background: $lite-background;
-    box-shadow: $lite-theme-shadow;
+    background: var(#{--components-background-default});
+    box-shadow: var(#{--card-shadow-default});
     border-radius: 20px;
     padding: 32px;
 }
@@ -63,13 +63,13 @@
         font-family: 'Montserrat';
         font-weight: 400;
         font-size: 25px;
-        color: $first-color;
+        color: var(#{--text-color-default});
     }
     &__time,  &__city{
         font-family: 'Montserrat';
         font-weight: 400;
         font-size: 15px;
-        color: $secondary-color;
+        color: var(#{--text-color-default});
     }
     .img {
         svg {

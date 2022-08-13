@@ -7,10 +7,12 @@
     width: 750px;
     height: 300px;
     position: relative;
-    background: $lite-background;
-    box-shadow: $lite-theme-shadow;
+    background: var(#{--components-background-default});
+    box-shadow: var(#{--card-shadow-default});
     border-radius: 20px;
     padding: 0px 0px 0px 32px;
+    overflow: hidden;
+    transition: 0.2s;
 }
 
 .this_day_items {
@@ -29,8 +31,8 @@
     height: 38px;
     left: 842px;
     top: 157px;
-    background: $lite-background;
-    box-shadow: $lite-theme-shadow;
+    background: $light-background;
+    box-shadow: var(#{--card-shadow-default});
 }
 
 .background_img {
@@ -56,7 +58,7 @@
 }
 
 .indicator__value {
-    color: $first-color;
+    color: var(#{--text-color-default});
     font-family: 'Montserrat';
     font-style: normal;
     font-size: 14px;
