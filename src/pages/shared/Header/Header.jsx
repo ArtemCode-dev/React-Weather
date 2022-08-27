@@ -1,10 +1,8 @@
-import React, { useState } from "react";
 import GlobalSvgSelector from "../../../assets/icons/shared/GlobalSvgSelector";
 import s from './Header.module.scss';
 import Select from 'react-select'
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { changeThemeStyle } from "../../../store/theme-slice";
+import { changeThemeStyle } from "../../../store/slices/theme-slice";
 
 const Header = () => {
     const theme = useSelector((state => state.theme.themeStyle.style));

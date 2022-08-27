@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { changeCssRootVariables } from "../model/ChangeRootCssVariables";
-import { storage } from "../model/Storage";
+import { changeCssRootVariables } from "../../model/ChangeRootCssVariables";
+import { storage } from "../../model/Storage";
 
 const initialState = {
     themeStyle : {

@@ -3,14 +3,14 @@ import s from './ThisDay.module.scss';
 import GlobalSvgSelector from '../../../../assets/icons/shared/GlobalSvgSelector'
 import { useSelector } from "react-redux";
 
-const ThisDay = () => {
+const ThisDay = ({weather}) => {
     const day = useSelector((state) => state.day.dayInfo);
     return (
         <div className={s.this__day}>
             <div className={s.top__block}>
                 <div className={s.top__block_wrapper}>
                     <div className={s.this__temp}>
-                        {day.degrees}
+                        {Math.floor(weather.main.temp)}°
                     </div>
                     <div className={s.this__day_name}>
                         Сегодня
