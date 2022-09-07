@@ -10,11 +10,11 @@ import WeekPanel from "./WeekPanel/WeekPanel";
 
 const Home = () => {
 
+    const mainCity = useSelector((state) => state.currentWeatherSlice.city);
     const dispatch  = useDispatch();
-    // const {weather} = useSelector(state => state.currentWeatherSlice.weather);
     useEffect(()=> {
-        dispatch(fetchCurrentWeather('Moscow'))
-    }, []);
+        dispatch(fetchCurrentWeather(mainCity))
+    }, [mainCity]);
     const {weather} = useSelector(selectCurrentWeatherData);
 
     return(

@@ -1,9 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    popUpStatus : false,
     week : [
         {
-            name : 'Сегодня',
+            name : 'Сб',
             date : '28 авг',
             icon_id: 'sun',
             info : 'Ясно',
@@ -11,7 +12,7 @@ const initialState = {
             secondTemperature : '+15°',
         },
         {
-            name: 'Завтра',
+            name: 'Вск',
             date: '29 авг',
             icon_id: 'rain',
             info: 'Небольшой дождь',
@@ -65,9 +66,11 @@ const weekPanelSlice = createSlice({
     name:'weekPanel',
     initialState,
     reducers : {
-
+        changePopUpStatus(state) {
+            state.popUpStatus = !state.popUpStatus;
+        }
     }
 });
 
-// export const {action} = dayInfoSlice.actions
+export const {changePopUpStatus} = weekPanelSlice.actions
 export default weekPanelSlice.reducer

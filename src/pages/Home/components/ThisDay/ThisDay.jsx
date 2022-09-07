@@ -2,9 +2,11 @@ import React from "react";
 import s from './ThisDay.module.scss';
 import GlobalSvgSelector from '../../../../assets/icons/shared/GlobalSvgSelector'
 import { useSelector } from "react-redux";
+import { dayInfoSelector, mainCitySelector } from "../../../../store/selectors";
 
 const ThisDay = ({weather}) => {
-    const day = useSelector((state) => state.day.dayInfo);
+    const day = useSelector(dayInfoSelector);
+    const mainCity = useSelector(mainCitySelector);
     return (
         <div className={s.this__day}>
             <div className={s.top__block}>
@@ -19,11 +21,8 @@ const ThisDay = ({weather}) => {
                 <GlobalSvgSelector id={day.imgId}/>
             </div>
             <div className={s.bottom__block}>
-                <div className={s.this__time}>
-                    Время: <span>{day.time}</span>
-                </div>
                 <div className={s.this__city}>
-                    Город: <span>{day.city}</span>
+                    Город: <span>{mainCity}</span>
                 </div>
             </div>
         </div>

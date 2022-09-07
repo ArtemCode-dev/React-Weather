@@ -1,11 +1,18 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import GlobalSvgSelector from "../../../assets/icons/shared/GlobalSvgSelector";
+import { infoItemsSelector } from "../../../store/selectors";
+import { changePopUpStatus } from "../../../store/slices/weekPanel-slice";
 import ThisDayItem from "../../Home/components/ThisDayInfo/ThisDayItem";
 import s from './Popup.module.scss';
 
 const Popup = () => {
-    const infoItems = useSelector((state) => state.dayInfo.dayInfo)
+    const infoItems = useSelector(infoItemsSelector);
+
+    const dispatch = useDispatch();
+    const closePopUp = () => {
+        dispatch(changePopUpStatus());
+    }
 
     return(
         <>
@@ -27,7 +34,7 @@ const Popup = () => {
                         return <ThisDayItem item = {item} key={item.name}/>
                     })}
                 </div>
-                <div className={s.closeButton}>
+                <div className={s.closeButton} onClick={closePopUp}>
                     <GlobalSvgSelector id={'close_button'}/>
                 </div>
             </div>
